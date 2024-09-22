@@ -32,17 +32,21 @@ export default function EventModal() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const calendarEvent = {
-      title,
-      description,
-      label: selectedLabel,
-      day: daySelected.valueOf(),
-      id: selectedEvent ? selectedEvent.id : Date.now(),
-    };
-    if (selectedEvent) {
-      dispatchCalEvent({ type: "update", payload: calendarEvent });
+    if (title.trimStart().length === 0) {
+      alert("Please enter a title");
     } else {
-      dispatchCalEvent({ type: "push", payload: calendarEvent });
+      const calendarEvent = {
+        title,
+        description,
+        label: selectedLabel,
+        day: daySelected.valueOf(),
+        id: selectedEvent ? selectedEvent.id : Date.now(),
+      };
+      if (selectedEvent) {
+        dispatchCalEvent({ type: "update", payload: calendarEvent });
+      } else {
+        dispatchCalEvent({ type: "push", payload: calendarEvent });
+      }
     }
 
     setShowEventModal(false);
