@@ -1,3 +1,4 @@
+/* Base Styles */
 .App {
   text-align: center;
 }
@@ -36,6 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
 /* Base Light Mode Styles */
 body {
   background-color: white;
@@ -57,7 +59,6 @@ body.dark-mode {
   color: white;
 }
 
-/* Other elements for dark mode styling */
 .dark-mode button {
   background-color: #555;
   color: white;
@@ -69,6 +70,7 @@ body.dark-mode {
   border: 1px solid #555;
 }
 
+/* Button Styles */
 .help-btn {
   background-color: #f9f9f9;
   color: #000;
@@ -80,6 +82,7 @@ body.dark-mode {
   color: #fff;
   border: 1px solid #444;
 }
+
 .search-btn {
   background-color: #f9f9f9;
   color: #000;
@@ -91,17 +94,19 @@ body.dark-mode {
   color: #fff;
   border: 1px solid #444;
 }
+
 .create-btn {
-  background-color: #000000; /* Light Mode: Green */
+  background-color: #000000;
   color: white;
   border: none;
 }
 
 .dark-mode .create-btn {
-  background-color: #1e1e1e
-  ; /* Darker Green for Dark Mode */
+  background-color: #1e1e1e;
   color: white;
 }
+
+/* Modal Styles */
 .modal {
   background-color: #ffffff;
   color: #000;
@@ -111,55 +116,94 @@ body.dark-mode {
   background-color: #1e1e1e;
   color: #fff;
 }
-/* Default Light Mode */
-.help-btn, .search-btn, .create-btn {
-  background-color: #f9f9f9;
-  color: #000;
-  border: 1px solid #ccc;
-}
 
-.create-btn {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  border: none;
-}
-
-/* Dark Mode */
-.dark-mode .help-btn, .dark-mode .search-btn {
-  background-color: #333;
-  color: #fff;
-  border: 1px solid #444;
-}
-
-.dark-mode .create-btn {
-  background-color: #2E7D32; /* Dark Green */
-  color: white;
-  border: none;
-}
+/* Custom Select */
 .select-custom {
-  border: 1px solid #ccc; /* Adjust as needed */
-  border-radius: 0.25rem; /* Adjust as needed */
-  padding: 0.5rem 2rem 0.5rem 0.75rem; /* Add more padding on the right */
-  font-size: 1rem; /* Adjust as needed */
-  color: #4A5568; /* Text color */
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>') no-repeat right 0.5rem center; /* Custom arrow */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #4A5568;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="1em" height="1em"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>') no-repeat right 0.5rem center;
   background-size: 1em;
-  appearance: none; /* Remove default styling */
+  appearance: none;
 }
 
 .select-custom:focus {
-  outline: none; /* Remove outline on focus */
-  border-color: #4A5568; /* Focus border color */
+  outline: none;
+  border-color: #4A5568;
 }
 
-
-/* styles.css */
-
+/* Date Button */
 .date-button {
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease;
 }
 
 .date-button:hover {
-  background-color: rgba(0, 0, 0, 0.2); /* Light hover effect */
-  cursor: pointer; /* Change cursor on hover */
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Responsive Styles for Phones */
+@media (max-width: 600px) {
+  .App-header {
+    font-size: calc(10px + 4vmin);
+    padding: 20px;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .create-btn, .help-btn, .search-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .select-custom {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  .date-button {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+/* Responsive Styles for Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .App-header {
+    font-size: calc(10px + 3vmin);
+    padding: 40px;
+  }
+
+  .App-logo {
+    height: 35vmin;
+  }
+
+  .create-btn, .help-btn, .search-btn {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .modal {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .select-custom {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .date-button {
+    width: 90%;
+    padding: 0.75rem;
+  }
 }
